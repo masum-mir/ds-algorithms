@@ -2,10 +2,9 @@ package com.algovault.algo.searching;
 /************************************************************
  * 🔰 CLASS: BinarySearch
  * ----------------------------------------------------------
- * 📌 Description : Implementation of Singly Linked List
- * 🛠️  Purpose     : This class exists to quickly locate an element
- *                  in a sorted array by repeatedly halving the search
- *                  range instead of scanning every element.
+ * 📌 Description : Implementation of Binary Search algorithm
+ * 🛠️  Purpose    : Efficiently find an element’s index in
+ *                   a sorted array
  * 🧠 Complexity   : O(log n)
  *
  * 🧑‍💻 Crafted With Logic & Love by Masum | 05-Aug-2025
@@ -29,6 +28,7 @@ public class BinarySearch {
         }
         return -1;
     }
+
     // recursive binary search
     static int recursiveBinarySearch(int arr[], int data) {
         int low=0, high = arr.length-1;
@@ -66,6 +66,6 @@ public class BinarySearch {
 }
 /************************************************************
  * 🔚 End of BinarySearch.java
- * 📣 Built for mastering binary search operations stepwise
+ * 📣 Built for mastering iterative & recursive binary search
  * ✍️ Author: Masum | Keep coding, keep learning
  ************************************************************/
