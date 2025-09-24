@@ -12,7 +12,7 @@ package com.algovault.algo.sorting;
  ************************************************************/
 
 public class BubbleSort {
-    public void bubbleSort(int arr[], int n) {
+    static void bubbleSort(int arr[], int n) {
         int i, j, temp, flag=0;
         for(i=0;i<n-1;i++) {
             flag=0;
@@ -33,15 +33,14 @@ public class BubbleSort {
     public static void main(String[] args) {
         // 🔸 CODED BY MASUM ✨ | NEVER STOP LEARNING 🚀
 
-        int[] arr = {64, 34, 25, 12, 22, 11, 90};
+        int[] arr = {5, 4, 3, 2, 1};
 
         System.out.print("Before BubbleSort: ");
         for (int num : arr) {
             System.out.print(num + " ");
         }
 
-        BubbleSort sorter = new BubbleSort();
-        sorter.bubbleSort(arr, arr.length);
+        bubbleSort(arr, arr.length);
 
         System.out.print("\nAfter BubbleSort: ");
         for (int num : arr) {

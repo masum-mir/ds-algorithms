@@ -14,7 +14,7 @@ package com.algovault.algo.searching;
 public class BinarySearch {
 
     // iterative binary search
-    public int binarySearch(int arr[], int data){
+    static int binarySearch(int arr[], int data){
         int low=0, high = arr.length-1;
         while(low<=high) {
             int mid = low+(high-low)/2;
@@ -30,11 +30,11 @@ public class BinarySearch {
         return -1;
     }
     // recursive binary search
-    public int recursiveBinarySearch(int arr[], int data) {
+    static int recursiveBinarySearch(int arr[], int data) {
         int low=0, high = arr.length-1;
         return recursiveBinarySearchImpl(arr, low, high, data);
     }
-    private  int recursiveBinarySearchImpl(int arr[], int low, int high, int data){
+    static int recursiveBinarySearchImpl(int arr[], int low, int high, int data){
         if(high>= low) {
             int mid = low + (high - low) / 2;
 
@@ -52,15 +52,13 @@ public class BinarySearch {
     public static void main(String[] args) {
         // 🔸 CODED BY MASUM ✨ | NEVER STOP LEARNING 🚀
 
-        BinarySearch bs = new BinarySearch();
         int arr[] = {2, 4, 6, 8, 10, 12, 14};
-
         int target = 20;
 
-        int iterativeResult = bs.binarySearch(arr, target);
+        int iterativeResult = binarySearch(arr, target);
         System.out.println("Data is"+(iterativeResult!=-1?" Found at index: "+iterativeResult:" Not found."));
 
-        int recursiveResult = bs.recursiveBinarySearch(arr, 12);
+        int recursiveResult = recursiveBinarySearch(arr, 12);
         System.out.println("Data is"+(recursiveResult!=-1?" Found at index: "+recursiveResult:" Not found."));
 
     }

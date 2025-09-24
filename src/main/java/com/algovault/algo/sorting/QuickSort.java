@@ -11,18 +11,18 @@ package com.algovault.algo.sorting;
  *                   insertion sort for large datasets.
  * 🧠 Complexity   : O(n²)
  *
- * 🧑‍💻 Crafted With Logic & Love by Masum | 05-Aug-2025
+ * 🧑‍💻 Crafted With Logic & Love by Masum | 10-Aug-2025
  ************************************************************/
 
 public class QuickSort {
-    public void quickSort(int arr[], int low, int high) {
+    static void quickSort(int arr[], int low, int high) {
         if(low<high) {
             int pi = partition(arr, low, high);
             quickSort(arr, low, pi-1); // sort left sub-array
             quickSort(arr, pi+1, high); // sort right sub-array
         }
     }
-    private int partition(int arr[], int low, int high) {
+    static int partition(int arr[], int low, int high) {
         int pivot = arr[high];
         int i = low-1;
 
@@ -36,7 +36,7 @@ public class QuickSort {
         return i+1;
     }
 
-    private void swap(int arr[], int i, int j) {
+    static void swap(int arr[], int i, int j) {
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
@@ -45,14 +45,13 @@ public class QuickSort {
     public static void main(String[] args) {
         // 🔸 CODED BY MASUM ✨ | NEVER STOP LEARNING 🚀
 
-        int[] arr = { 10, 7, 8, 9, 1, 5 };
+        int[] arr = {5, 4, 3, 2, 1};
         System.out.print("Before QuickSort: ");
         for (int num : arr) {
             System.out.print(num + " ");
         }
 
-        QuickSort sorter = new QuickSort();
-        sorter.quickSort(arr, 0, arr.length - 1);
+        quickSort(arr, 0, arr.length - 1);
         System.out.print("\nAfter QuickSort: ");
         for (int num : arr) {
             System.out.print(num + " ");

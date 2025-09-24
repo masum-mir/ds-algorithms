@@ -20,50 +20,48 @@ package com.algovault.algo.sorting;
  *
  * 🧠 Complexity   : O(n log n)
  *
- * 🧑‍💻 Crafted With Logic & Love by Masum | 05-Aug-2025
+ * 🧑‍💻 Crafted With Logic & Love by Masum | 10-Aug-2025
  ************************************************************/
 
 public class MargeSort {
     static void merge(int[] arr, int left, int mid, int right) {
 
-        // find sizes of two sub-arrays to be merged
-        int n1 = mid-left+1;
-        int n2 = right-mid;
+        // size
+        int size1 = mid-left+1;
+        int size2 = right-mid;
 
-        // temp arrays
-        int[] L = new int[n1];
-        int[] R = new int[n2];
+        // create arrays
+        int[] leftArray = new int[size1];
+        int[] rightArray = new int[size2];
 
-        // copy data to temp arrays
-        for(int i=0; i<n1; i++) {
-            L[i] = arr[left+i];
+        for(int i=0; i<size1; i++) {
+            leftArray[i] = arr[left+i];
         }
-        for(int j=0; j<n2; j++) {
-            R[j] = arr[mid+1+j];
+        for(int j=0; j<size2; j++) {
+            rightArray[j] = arr[mid+1+j];
         }
 
         int i=0, j=0;
         int k=left;
-        // merge temp arrays back into original array
-        while (i<n1 && j<n2) {
-            if(L[i] <= R[j]) {
-                arr[k] = L[i];
+
+        while (i<size1 && j<size2) {
+            if(leftArray[i] <= rightArray[j]) {
+                arr[k] = leftArray[i];
                 i++;
             } else {
-                arr[k] = R[j];
+                arr[k] = rightArray[j];
                 j++;
             }
             k++;
         }
 
-        // copy remaining elements of L[] if any
-        while (i<n1) {
-            arr[k] = L[i];
+        while (i<size1) {
+            arr[k] = leftArray[i];
             i++;
             k++;
         }
-        while (j<n2) {
-            arr[k] = R[j];
+        while (j<size2) {
+            arr[k] = rightArray[j];
             j++;
             k++;
         }
@@ -84,9 +82,16 @@ public class MargeSort {
     public static void main(String[] args) {
         // 🔸 CODED BY MASUM ✨ | NEVER STOP LEARNING 🚀
 
-        int[] arr = {38, 27, 43, 10, 7};
+        int[] arr = {5, 4, 3, 2, 1};
+
+        System.out.print("Before MergeSort: ");
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+
         int n = arr.length;
         mergeSort(arr, 0, n-1);
+        System.out.print("\nAfter MergeSort: ");
         for (int i : arr) {
             System.out.print(i + " ");
         }
