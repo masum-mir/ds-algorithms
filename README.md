@@ -1,4 +1,9 @@
- # 📦 Array Data Structure
+
+# Data Structure & Algorithms
+
+---
+
+# 📦 Array Data Structure
 
 An **Array** implementation in Java with a wide range of operations for **mastering Data Structures & Algorithms** step-by-step.  
 This implementation includes **dynamic resizing**, multiple insertion and deletion methods, searching, sorting, reversing, and more.
