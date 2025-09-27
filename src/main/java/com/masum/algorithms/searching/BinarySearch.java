@@ -14,16 +14,16 @@ public class BinarySearch {
 
     // iterative binary search
     static int binarySearch(int arr[], int data){
-        int low=0, high = arr.length-1;
-        while(low<=high) {
-            int mid = low+(high-low)/2;
+        int left=0, right  = arr.length-1;
+        while(left<=right ) {
+            int mid = left+(right -left)/2;
 
             if(arr[mid] == data){
                 return mid;
             } else if(arr[mid] < data) {
-                low = mid+1;
+                left = mid+1;
             } else{
-                high = mid-1;
+                right  = mid-1;
             }
         }
         return -1;
@@ -31,19 +31,19 @@ public class BinarySearch {
 
     // recursive binary search
     static int recursiveBinarySearch(int arr[], int data) {
-        int low=0, high = arr.length-1;
-        return recursiveBinarySearchImpl(arr, low, high, data);
+        int left=0, right  = arr.length-1;
+        return recursiveBinarySearchImpl(arr, left, right , data);
     }
-    static int recursiveBinarySearchImpl(int arr[], int low, int high, int data){
-        if(high>= low) {
-            int mid = low + (high - low) / 2;
+    static int recursiveBinarySearchImpl(int arr[], int left, int right , int data){
+        if(right >= left) {
+            int mid = left + (right  - left) / 2;
 
             if (arr[mid] == data) {
                 return mid;
             } else if(arr[mid]>data) {
-                return recursiveBinarySearchImpl(arr, low, mid-1, data);
+                return recursiveBinarySearchImpl(arr, left, mid-1, data);
             } else {
-                return recursiveBinarySearchImpl(arr, mid+1, high, data);
+                return recursiveBinarySearchImpl(arr, mid+1, right , data);
             }
         }
         return -1;
