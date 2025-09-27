@@ -200,7 +200,7 @@ public class SinglyLinkedList {
         throw new IndexOutOfBoundsException("Position out of bounds");
     }
 
-    // Detect if cycle exists in linked list (Floyd's cycle detection)
+    // Detect if cycle exists in linked list - Floyd's cycle Algorithm
     public boolean hasCycle() {
         Node slow = head;
         Node fast = head;
